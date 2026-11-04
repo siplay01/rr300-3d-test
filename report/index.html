@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RR-300 3D: catalog reconciliation report</title>
+<style>
+:root{--bg:#f6f7f9;--surface:#fff;--text:#1b2430;--muted:#566275;--line:#d5dbe3;--accent:#1f4f8f;--ok:#1b6e3c;--warn:#a15c00;--bad:#b3261e}
+@media (prefers-color-scheme:dark){:root{--bg:#10151c;--surface:#171e28;--text:#e6ebf2;--muted:#9aa7b8;--line:#2b3644;--accent:#7fb0ff;--ok:#7bd49a;--warn:#ffc266;--bad:#ff8a80}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:1000px;margin:0 auto;padding:24px 16px 64px}
+h1{font-size:clamp(26px,4vw,36px);line-height:1.15;margin:0 0 8px}
+h2{font-size:22px;margin:40px 0 10px}
+h3{font-size:17px;margin:20px 0 6px}
+p{max-width:72ch}
+.lead{font-size:18px;color:var(--muted)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin:20px 0}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
+.card b{display:block;font-size:28px;line-height:1.1;font-variant-numeric:tabular-nums}
+.card span{color:var(--muted);font-size:14px}
+.tw{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{padding:8px 12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{background:var(--bg);font-weight:600}
+tr:last-child td{border-bottom:0}
+td.n{font-variant-numeric:tabular-nums;white-space:nowrap}
+.ok{color:var(--ok);font-weight:600}.warn{color:var(--warn);font-weight:600}.bad{color:var(--bad);font-weight:600}
+figure{margin:16px 0;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px}
+figure img{width:100%;height:auto;display:block;border-radius:6px}
+figcaption{color:var(--muted);font-size:14px;margin-top:8px}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px}
+code{font:13px ui-monospace,Menlo,monospace;background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:2px 8px;overflow-wrap:anywhere}
+ul{padding-left:20px;max-width:80ch}li{margin:4px 0}
+a{color:var(--accent)}
+</style>
+</head>
+<body>
+<main>
+<h1>RR-300 3D: catalog reconciliation report</h1>
+<p class="lead">2026-11-04. The viewer now follows the printed spare-parts catalog row by row. Every base-configuration part has a real object with the catalog count, and you can cut the unit open and see them.</p>
+
+<div class="cards">
+<div class="card"><b>73 &rarr; 738</b><span>model objects (before and after)</span></div>
+<div class="card"><b>643 of 647</b><span>catalog pieces drawn (base unit, 20-pin coupling)</span></div>
+<div class="card"><b>239</b><span>catalog rows reconciled, 210 fully, 1 partly, 2 not drawn, 26 assemblies or variants</span></div>
+<div class="card"><b>0 mm</b><span>drift after explode and reassembly</span></div>
+</div>
+
+<h2>1. What was checked</h2>
+<p>I read all 26 figures of the RR-300 catalog (drawing page and parts table), the bearing and fastener tables and the part-number index from the scans. That gave 253 rows. Figure 2 (the 16-pin coupling variant) is a modification and was left out, which leaves 239 rows and 647 pieces for the base unit. The earlier model had 73 objects. The parts tables list 233 washers, 97 nuts, 74 bolts, 45 rings, 35 springs, 20 liners, 19 discs and 13 bearings (alternative fastener sets are counted in both versions), and almost none of them existed.</p>
+<p>Five builders each took a group of figures, compared their parts with the drawings and the manual, fixed sizes, and drew what was missing. A sixth reader extracted every printed dimension from the manual and compared it with the model.</p>
+
+<h2>2. What was built, by assembly</h2>
+<div class="tw"><table>
+<thead><tr><th>Group</th><th>Figures</th><th>Rows</th><th>New objects</th><th>Main content</th></tr></thead>
+<tbody>
+<tr><td>Housing, cover, kit</td><td class="n">1, 3, 4, 21</td><td class="n">42</td><td class="n">222</td><td>Hollow housing with real bearing seats and port bores. 14 stud, washer and nut sets on the cover joint, gasket frame, cover screws and lock wire, thermometer sensor cover with fittings, loose mounting kit (shown only in the exploded view). Cover dome hollowed over the clutches.</td></tr>
+<tr><td>Input shaft, hub, distributor</td><td class="n">5 to 10</td><td class="n">67</td><td class="n">116</td><td>Bearings 313AK, 310A, 104K, rear cup, pressure discs, piston rings, 30 return springs, half rings, locks, plungers, spool and the distributor small parts. Drive shaft thinned to pass through the hollow gears, hub rim extended to the clutch packs.</td></tr>
+<tr><td>Clutches and gears</td><td class="n">11, 12, 13, 17</td><td class="n">40</td><td class="n">116</td><td>Two clutch packs (drum, 4 friction and 3 steel discs, driven hub, thrust disc, 16 bolts each), bearings 3518 and 3611, nuts and tab washers, pump drive gear, idler with axle and locking wire. The old solid clutch blobs are gone.</td></tr>
+<tr><td>Output shaft and end plates</td><td class="n">14, 15, 16</td><td class="n">34</td><td class="n">100</td><td>Two tapered bearings 7620, bearing cups, four gaskets 525-118, output flange with 6 holes, rear cup studs and nuts, end-plate nut sets, gear 35 (Z42, module 4).</td></tr>
+<tr><td>Hydraulics</td><td class="n">18 to 20, 22 to 26</td><td class="n">57</td><td class="n">117</td><td>Oil pump inside the sump with its gear chain, cooler with O-ring grooves and covers, relief valve (body, screw, plunger, spring), filter in its bowl, both pipes with bored banjo eyes and sealing rings.</td></tr>
+</tbody></table></div>
+
+<h2>3. Practices taken from the reference kit</h2>
+<ul>
+<li><b>Source registry.</b> One row per catalog position: part, figure, position, quantity in the catalog and in the model, viewer node, source scans, geometry status. File: <code>catalog/source_registry.csv</code>.</li>
+<li><b>Manifest.</b> Nodes, catalog figure, explode offsets and windows: <code>catalog/rr300_manifest.json</code>.</li>
+<li><b>Stable names.</b> Every object is called <code>F&lt;figure&gt;P&lt;position&gt;_name</code>, so a click on any bolt shows its catalog row: figure, position, designation, quantity, mass, material. Extras that are not in the catalog start with <code>X</code>.</li>
+<li><b>Honest status per part.</b> Drawing-verified (10 rows), catalog dimensions (58), approximate (153), not drawn (18, each with a reason). Approximate parts are never presented as measured.</li>
+<li><b>Mesh QA.</b> <code>blender/qa_glb.py</code> checks every GLB for NaN vertices, open edges and non-manifold edges. All new parts pass; the tolerated exceptions are listed in section 6.</li>
+<li><b>Linked duplicates.</b> Repeated fasteners share one mesh, so 738 objects fit into 11 MB.</li>
+<li><b>Closed solids, bevelled edges, applied transforms</b> for every new part, and clash probes between neighbouring groups.</li>
+<li><b>Section view and contact shading.</b> A stencil-capped cutaway (three planes, one slider) and a GTAO ambient-occlusion pass, both switchable.</li>
+</ul>
+
+<h2>4. Dimension audit</h2>
+<p>The manual has no dimension lines. Printed sizes exist only for the overall 781 x 650 x 799 mm, the masses, the 19 mm foot holes and a 46 mm water pipe. Everything else was scaled from the drawings after calibrating on the 238 mm centre distance. The calibration reproduces the three printed overall values to within 1 percent, so the scaled values are good to about 3 to 5 mm.</p>
+<div class="tw"><table>
+<thead><tr><th>Finding</th><th>Action</th></tr></thead>
+<tbody>
+<tr><td>The catalog overall size includes the bell (flange 1, 650 mm in the drawing). Your photo bells are 710 mm (variant A) and 694 mm (variant C), so the model is about 30 mm too tall and 60 mm too wide against the catalog numbers.</td><td class="warn">Kept. The photos show your unit, and the catalog flange 1 is a different part. The overall labels still show the catalog figures.</td></tr>
+<tr><td>Output flange, cover bolt circles, input ring nuts, red base circle, water bore (46 mm), foot holes at the output end (19 mm), cooler axis and diameter, relief valve height, dome height.</td><td class="ok">Corrected.</td></tr>
+<tr><td>Oil pump: the manual section puts it inside the sump, not outside the engine face.</td><td class="ok">Moved inside, with the owner photos showing only round side covers.</td></tr>
+<tr><td>Housing is 42 mm longer in the drawing than in the model (engine face and reverse gears too far aft).</td><td class="warn">Not changed. It rests on one scaled view; a tape measurement should confirm before a rebuild.</td></tr>
+<tr><td>Foot lugs: the drawing shows one lug height, the model and your photos show high and low pairs.</td><td class="warn">Kept as in the photos.</td></tr>
+<tr><td>Drain plug missing on the rear face.</td><td class="ok">Added.</td></tr>
+</tbody></table></div>
+
+<h2>5. Result</h2>
+<div class="grid2">
+<figure><img src="../screens/20_out_right.png" alt="Assembled gearbox from the output side"><figcaption>Assembled, output side. Studs, nuts and washers stand on the cover, side plates carry the covers.</figcaption></figure>
+<figure><img src="../screens/20_eng_left.png" alt="Assembled gearbox from the engine side"><figcaption>Assembled, engine side.</figcaption></figure>
+<figure><img src="../screens/19_cut_x_a.png" alt="Vertical section through the shaft axes"><figcaption>Vertical section through both shaft axes: shafts, bearings, clutch packs, gears, output flange.</figcaption></figure>
+<figure><img src="../screens/19_cut_y.png" alt="Horizontal section"><figcaption>Horizontal section: clutch packs and gears seen from above.</figcaption></figure>
+<figure><img src="../screens/21_explode_0.6.png" alt="Exploded view at 60 percent"><figcaption>Exploded view at 60 percent.</figcaption></figure>
+<figure><img src="../screens/21_explode_1.png" alt="Exploded view fully open"><figcaption>Fully open. The loose mounting kit appears on the floor.</figcaption></figure>
+</div>
+<p>Open <code>rr300-3d/index.html</code>. Click any part to see its catalog row. The button "Cut" cycles three section planes, and the table "Composition by catalog" lists every position with catalog count, model count and confidence.</p>
+
+<h2>6. What is still approximate or open</h2>
+<ul>
+<li>Not drawn: nut 329-21 and fitting 525-20-117 (figure 25), and 2 of the 12 sealing rings 18x24 at the sensor bar joint, which has no gap for them.</li>
+<li>153 of 239 rows are <b>approximate</b>: the catalog prints no dimensions or tooth counts for them. Sizes were set from standard geometry, part photos, drawing proportions and the catalog masses. Tooth counts of the pump gears (Z77, Z42, Z25) and the clutch hubs are estimates.</li>
+<li>Solid shafts are heavier than the catalog (oil bores are not modelled): 16.7 against 14.9 kg and 36.1 against 27.5 kg.</li>
+<li>Bell: the catalog base flange is 650 mm, the model has your photo variants. Overall height and width therefore differ from 799 and 650 mm.</li>
+<li>Cover 74 (cooler end) was enlarged from the scaled 122 mm to 138 mm to close the 135 mm bore. Its edge overlaps a nut and a flange by 3.5 to 4 mm.</li>
+<li>Sections: a cap needs a closed mesh. The cover skin is open (2448 open edges), and <code>housing_main</code> (15 weld edges) and a few other meshes have non-manifold welds, so a few cut faces show artefacts.</li>
+<li>22 plain studs and four cover studs are extra objects that have no catalog row. The mounting kit is shown only in the exploded view and the driving half-coupling lies flat at the far end of the kit row.</li>
+<li>Fasteners move with their assembly in the exploded view. They do not yet lift off in their own earlier stage.</li>
+<li>Filter bowl wall is 8.5 mm at the rear and the idler recess leaves 4 mm of wall at one spot.</li>
+<li>The page is 11 MB and loads Three.js from jsDelivr, so it needs internet. Draco compression and an offline copy are possible follow-ups.</li>
+</ul>
+
+<h2>7. Files</h2>
+<ul>
+<li>Viewer: <code>rr300-3d/index.html</code> (previous version kept as <code>v17-before-detail-pass.html</code>).</li>
+<li>Catalog data: <code>catalog/bom_fig01.json</code> to <code>bom_fig26.json</code>, <code>bom_all.json</code>, <code>bom_standard_parts.json</code>, <code>part_number_index.json</code>.</li>
+<li>Coverage per group: <code>catalog/coverage_*.json</code> and <code>catalog/dimension_checks_*.md</code>.</li>
+<li>Dimension audit: <code>catalog/overall_dimensions_audit.md</code>.</li>
+<li>Registry and manifest: <code>catalog/source_registry.csv</code>, <code>catalog/rr300_manifest.json</code>.</li>
+<li>Builder rules: <code>catalog/AGENT_BRIEF.md</code>. Models and scripts: <code>blender/bom_*.py</code>, <code>blender/*.glb</code>.</li>
+</ul>
+</main>
+</body>
+</html>
